@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from bson.objectid import ObjectId
 
+
 class UserSerializer(BaseModel):
     id: str | None = None
     username: str | None = None
@@ -9,3 +10,7 @@ class UserSerializer(BaseModel):
     first_name: str | None = None
     last_name: str | None = None
     active: bool = True
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str

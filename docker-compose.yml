@@ -10,10 +10,15 @@ services:
     command: fastapi run main.py --port 8000
     environment:
       MONGO_URI: /run/secrets/mongo_uri
+      SECRET_KEY: /run/secrets/secret_key
+
     secrets:
       - mongo_uri
+      - secret_key
 
 
 secrets:
   mongo_uri:
     file: ./secrets/mongo_uri.txt
+  secret_key:
+    file: ./secrets/secret_key.txt
